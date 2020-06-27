@@ -4,33 +4,26 @@ using UnityEngine;
 
 public class RaycastController : MonoBehaviour
 {
-    private MovementInput _input;
     public float rayLength;
+    private MovementInput _input;
+    private WeaponHandler _weapon;
     void Awake()
     {
+        _weapon = FindObjectOfType<WeaponHandler>();
         _input = transform.parent.gameObject.GetComponent<MovementInput>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        RaycastCheck();
-    }
+    void Update() => RaycastCheck();
 
     void RaycastCheck()
     {
         if (Input.GetMouseButtonDown(_input.shoot))
         {
-            RaycastHit hit;
-            if(Physics.Raycast(transform.position, transform.forward, out hit, rayLength ))
-            {  
-                IDamageable damageable = hit.collider.GetComponent<IDamageable>();
-                if (damageable != null)
-                {
-                    damageable.DealDamage(10);
-                }
-
-            }
+            _weapon.currentGun.OnMouseDown(this.transform);
+        }
+        if (Input.GetMouseButton(_input.shoot))
+        {
+            _weapon.currentGun.OnMouseHold(this.transform);
         }
     }
 }

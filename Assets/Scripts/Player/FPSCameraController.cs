@@ -39,14 +39,15 @@ public class FPSCameraController : MonoBehaviour
 
         _currentViewPos += _lerpVelocity;
 
+        //clamp y so it doesnt spin off into space
+        _currentViewPos.y = Mathf.Clamp(_currentViewPos.y, -90f, 90f);
+
         //up down
         transform.localRotation = Quaternion.AngleAxis(-_currentViewPos.y, Vector3.right);
 
         //l & r
         _player.transform.localRotation = Quaternion.AngleAxis(_currentViewPos.x, _player.transform.up);
 
-        //clamp
-        _currentViewPos.y = Mathf.Clamp(_currentViewPos.y, -80f, 80f);
     }
 
 }
