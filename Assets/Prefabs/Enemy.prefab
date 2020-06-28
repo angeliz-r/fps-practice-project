@@ -1383,6 +1383,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stats: {fileID: 11400000, guid: 1ec8941e3e26d0b4ab1ca0f165e80f4b, type: 2}
+  dissolveShader: {fileID: -6465566751694194690, guid: e5e1c8a541ef6b841b1758b70ceeb6bb,
+    type: 3}
+  mat:
+  - {fileID: 2100000, guid: a2fa1990d06d9eb4a8e274c18b642246, type: 2}
+  - {fileID: 2100000, guid: dc30d0f173c2c674091d33a2f0b74d1f, type: 2}
 --- !u!114 &2936282083537051543
 MonoBehaviour:
   m_ObjectHideFlags: 0
