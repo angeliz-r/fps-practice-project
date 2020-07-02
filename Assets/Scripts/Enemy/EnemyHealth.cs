@@ -6,11 +6,15 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour, IDamageable
 {
     public EnemyStats stats;
+
     [Header("Enemy Dissolve")]
     public Shader dissolveShader;
-    public Shader defaultShader;
+    [HideInInspector]public Shader defaultShader;
     public Material[] mat;
 
+    [Space]
+    [Header("Damage Text")]
+    public GameObject dmgText;
 
     private int _currentHealth;
     private EnemyHealthUI _healthUI;
@@ -28,11 +32,13 @@ public class EnemyHealth : MonoBehaviour, IDamageable
         foreach (Material temp in mat)
             temp.shader = defaultShader;
     }
-    void Update() => CheckDeath();
-
+   
     public void DealDamage(int damage)
     {
         _currentHealth -= damage;
+        Instantiate(dmgText, transform.parent.position, Quaternion.identity).GetComponent<DamageTextDisplay>().Initialize(damage);
+
+        CheckDeath();
         _healthUI.SetHealthBarUI();
     }
 

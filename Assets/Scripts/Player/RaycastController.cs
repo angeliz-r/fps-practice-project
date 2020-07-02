@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RaycastController : MonoBehaviour
 {
-    public float rayLength;
+    //public float rayLength;
     private MovementInput _input;
     private WeaponHandler _weapon;
     void Awake()
@@ -13,9 +13,9 @@ public class RaycastController : MonoBehaviour
         _input = transform.parent.gameObject.GetComponent<MovementInput>();
     }
 
-    void Update() => RaycastCheck();
+    void Update() => InputCheck();
 
-    void RaycastCheck()
+    void InputCheck()
     {
         if (Input.GetMouseButtonDown(_input.shoot))
         {
@@ -24,6 +24,10 @@ public class RaycastController : MonoBehaviour
         if (Input.GetMouseButton(_input.shoot))
         {
             _weapon.currentGun.OnMouseHold(this.transform);
+        }
+        if (Input.GetMouseButtonDown(_input.scope))
+        {
+            _weapon.currentGun.OnRightMouseDown();
         }
     }
 }

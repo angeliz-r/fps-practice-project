@@ -14,7 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gunName: Rocket
   gunPrefab: {fileID: 0}
+  gunIcon: {fileID: 0}
   scope: {fileID: 0}
+  ammoType: 2
   minDamage: 300
   maxDamage: 100
   maxRange: 120

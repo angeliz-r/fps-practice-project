@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class WeaponHandler : MonoBehaviour
 {
     public Gun currentGun;
+    public Image currentIcon;
     public List<Gun> gunList = new List<Gun>();
 
     private Transform _camTransform;
@@ -35,6 +37,7 @@ public class WeaponHandler : MonoBehaviour
         {
             Destroy(_currentGunPrefab);
             _currentGunPrefab = Instantiate(gunList[0].gunPrefab, transform);
+            currentIcon.sprite = gunList[0].gunIcon;
             currentGun = gunList[0];
 
         }
@@ -42,6 +45,7 @@ public class WeaponHandler : MonoBehaviour
         {
             Destroy(_currentGunPrefab);
             _currentGunPrefab = Instantiate(gunList[1].gunPrefab, transform);
+            currentIcon.sprite = gunList[1].gunIcon;
             currentGun = gunList[1];
         }
     }

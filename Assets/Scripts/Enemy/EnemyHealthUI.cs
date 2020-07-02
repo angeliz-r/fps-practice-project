@@ -35,5 +35,4 @@ public class EnemyHealthUI : MonoBehaviour
     {
         return ((float)_enemyHealth.GetCurrentHealth() /(float) _maxHealth) * 100;
     }
-
 }

@@ -14,7 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gunName: Shotgun
   gunPrefab: {fileID: 0}
+  gunIcon: {fileID: 0}
   scope: {fileID: 0}
+  ammoType: 2
   minDamage: 80
   maxDamage: 20
   maxRange: 15
