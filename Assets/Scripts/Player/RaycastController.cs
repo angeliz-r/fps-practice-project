@@ -4,30 +4,74 @@ using UnityEngine;
 
 public class RaycastController : MonoBehaviour
 {
-    //public float rayLength;
+    [Range(0,500)]
+    public float raycastLength;
+
+    private ILootable _currentTarget;
     private MovementInput _input;
-    private WeaponHandler _weapon;
     void Awake()
     {
-        _weapon = FindObjectOfType<WeaponHandler>();
         _input = transform.parent.gameObject.GetComponent<MovementInput>();
     }
 
-    void Update() => InputCheck();
-
-    void InputCheck()
+    void Update()
     {
-        if (Input.GetMouseButtonDown(_input.shoot))
+        HandleRaycast();
+        Interact();
+    }
+
+    void Interact()
+    {
+        if (Input.GetKeyDown(_input.interact))
         {
-            _weapon.currentGun.OnMouseDown(this.transform);
+            if (_currentTarget != null)
+            {
+                _currentTarget.OnInteract();
+            }
         }
-        if (Input.GetMouseButton(_input.shoot))
+    }
+    void HandleRaycast()
+    {
+        RaycastHit hit;
+
+        if (Physics.Raycast(transform.position, transform.forward, out hit, raycastLength))
         {
-            _weapon.currentGun.OnMouseHold(this.transform);
+            ILootable lootable = hit.collider.GetComponent<ILootable>();
+
+            if (lootable != null)
+            {
+                if (lootable == _currentTarget)
+                {
+                    return;
+                }
+                else if (_currentTarget != null)
+                {
+                    _currentTarget.OnEndLook();
+                    _currentTarget = lootable;
+                    _currentTarget.OnStartLook();
+                }
+                else
+                {
+                    _currentTarget = lootable;
+                    _currentTarget.OnStartLook();
+                }
+            }
+            else
+            {
+                if (_currentTarget != null)
+                {
+                    _currentTarget.OnEndLook();
+                    _currentTarget = null;
+                }
+            }
         }
-        if (Input.GetMouseButtonDown(_input.scope))
+        else
         {
-            _weapon.currentGun.OnRightMouseDown();
+            if (_currentTarget != null)
+            {
+                _currentTarget.OnEndLook();
+                _currentTarget = null;
+            }
         }
     }
 }

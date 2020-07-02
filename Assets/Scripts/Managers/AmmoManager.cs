@@ -19,7 +19,7 @@ public class AmmoManager : MonoBehaviour
     void Awake()
     {
         instance = this;
-        UpdateAmmoText();
+        //UpdateAmmoText();
     }
 
     void Start()
@@ -41,7 +41,7 @@ public class AmmoManager : MonoBehaviour
             if (ammoCounts[ammoType] > 0)
             {
                 ammoCounts[ammoType]--;
-                UpdateAmmoText();
+                //UpdateAmmoText();
                 return true;
             }
             else
@@ -55,7 +55,7 @@ public class AmmoManager : MonoBehaviour
     public void AddAmmo(int ammoAmt, AmmoTypes ammoType)
     {
         //ammoCount += ammoAmt;
-        UpdateAmmoText();
+        //UpdateAmmoText();
         ammoCounts[ammoType] += ammoAmt;
     }
 

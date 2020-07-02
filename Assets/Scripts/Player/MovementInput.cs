@@ -4,12 +4,16 @@ using UnityEngine;
 
 public class MovementInput : MonoBehaviour
 {
+    public static MovementInput instance;
+
     public bool isDefault;
+
     [Header("Controls")]
     public string vAxis;
     public string hAxis;
     public KeyCode jump;
     public KeyCode sprint;
+    public KeyCode interact;
     public int shoot;
     public int scope;
 
@@ -21,6 +25,7 @@ public class MovementInput : MonoBehaviour
             hAxis = "Horizontal";
             jump = KeyCode.Space;
             sprint = KeyCode.LeftShift;
+            interact = KeyCode.E;
             shoot = 0;
             scope = 1;
         }
@@ -30,8 +35,14 @@ public class MovementInput : MonoBehaviour
             hAxis = "CustomHorizontal";
             jump = KeyCode.Space;
             sprint = KeyCode.Quote;
+            interact = KeyCode.U;
             shoot = 0;
             scope = 1;
         }
+    }
+
+    void Awake()
+    {
+        instance = this;
     }
 }
