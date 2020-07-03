@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class WeaponHandler : MonoBehaviour
 {
+    public static WeaponHandler instance;
+
     public Gun currentGun;
     public Image currentIcon;
     public List<Gun> gunList = new List<Gun>();
@@ -15,6 +17,7 @@ public class WeaponHandler : MonoBehaviour
     void Awake()
     {
         _camTransform = Camera.main.transform;
+        instance = this;
     }
 
     void Start()
@@ -26,7 +29,7 @@ public class WeaponHandler : MonoBehaviour
    
     void Update()
     {
-        WeaponSelect();
+        //WeaponSelect();
     }
 
     void WeaponSelect()
@@ -48,5 +51,17 @@ public class WeaponHandler : MonoBehaviour
             currentIcon.sprite = gunList[1].gunIcon;
             currentGun = gunList[1];
         }
+    }
+
+    public void PickUpGun(Gun gun)
+    {
+        if (currentGun != null)
+        {
+            Instantiate(currentGun.gunPickup, transform.position + transform.forward, Quaternion.identity);
+            Destroy(_currentGunPrefab);
+        }
+        currentGun = gun;
+        _currentGunPrefab = Instantiate(gun.gunPrefab,transform);
+        currentIcon.sprite = gun.gunIcon;
     }
 }

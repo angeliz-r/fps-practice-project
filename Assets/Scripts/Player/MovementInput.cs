@@ -14,6 +14,7 @@ public class MovementInput : MonoBehaviour
     public KeyCode jump;
     public KeyCode sprint;
     public KeyCode interact;
+    public KeyCode drop;
     public int shoot;
     public int scope;
 
@@ -26,6 +27,7 @@ public class MovementInput : MonoBehaviour
             jump = KeyCode.Space;
             sprint = KeyCode.LeftShift;
             interact = KeyCode.E;
+            drop = KeyCode.R;
             shoot = 0;
             scope = 1;
         }
@@ -36,6 +38,7 @@ public class MovementInput : MonoBehaviour
             jump = KeyCode.Space;
             sprint = KeyCode.Quote;
             interact = KeyCode.U;
+            drop = KeyCode.Y;
             shoot = 0;
             scope = 1;
         }

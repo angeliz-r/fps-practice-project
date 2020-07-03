@@ -8,17 +8,18 @@ public class GunPickup : MonoBehaviour, ILootable
 
     public void OnEndLook()
     {
-        throw new System.NotImplementedException();
+
     }
 
     public void OnInteract()
     {
-        throw new System.NotImplementedException();
+        WeaponHandler.instance.PickUpGun(gun);
+        Destroy(gameObject);
     }
 
     public void OnStartLook()
     {
-        throw new System.NotImplementedException();
+
     }
 
 }

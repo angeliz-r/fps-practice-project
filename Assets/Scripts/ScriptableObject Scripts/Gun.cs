@@ -8,6 +8,7 @@ public class Gun : ScriptableObject
     [Header("Gun Overview")]
     public string gunName;
     public GameObject gunPrefab;
+    public GameObject gunPickup;
     public Sprite gunIcon;
     public GameObject scope;
     [Space]
