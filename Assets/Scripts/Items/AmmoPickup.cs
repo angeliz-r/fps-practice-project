@@ -6,13 +6,10 @@ public class AmmoPickup : MonoBehaviour, ILootable
 {
     public int ammoCount;
     public AmmoTypes ammoType;
-    public TextMeshProUGUI tooltipText;
 
     public void OnStartLook()
     {
-        //show tooltip ui
-        tooltipText.gameObject.SetActive(true);
-        tooltipText.text = "PRESS " + MovementInput.instance.interact.ToString() + " TO PICK UP " + ammoType.ToString().ToUpper();
+        TooltipUI.instance.OnStartLook();
     }
 
     public void OnInteract()
@@ -23,8 +20,7 @@ public class AmmoPickup : MonoBehaviour, ILootable
 
     public void OnEndLook()
     {
-        //hide tooltip ui
-        tooltipText.gameObject.SetActive(false);
+        TooltipUI.instance.OnEndLook();
     }
 
 }

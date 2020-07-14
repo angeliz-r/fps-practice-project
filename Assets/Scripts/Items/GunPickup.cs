@@ -6,9 +6,9 @@ public class GunPickup : MonoBehaviour, ILootable
 {
     public Gun gun;
 
-    public void OnEndLook()
+    public void OnStartLook()
     {
-
+        TooltipUI.instance.OnStartLook();
     }
 
     public void OnInteract()
@@ -17,9 +17,10 @@ public class GunPickup : MonoBehaviour, ILootable
         Destroy(gameObject);
     }
 
-    public void OnStartLook()
+    public void OnEndLook()
     {
-
+        TooltipUI.instance.OnEndLook();
     }
+
 
 }

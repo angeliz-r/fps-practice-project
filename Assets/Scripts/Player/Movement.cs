@@ -26,13 +26,16 @@ public class Movement : MonoBehaviour
 
     void FixedUpdate() //not dependent on framerate
     {
-        Move();
-        Run();
+        if (!GameManager.instance.isPaused)
+        {
+            Move();
+            Run();
+        }
     }
 
     private void Jump()
     {
-        if (Input.GetKeyDown(_input.jump))
+        if (Input.GetKeyDown(_input.jump) && !GameManager.instance.isPaused)
         {
             if (IsGrounded())
                 _rb.AddForce(0, jumpForce, 0, ForceMode.Impulse);

@@ -27,27 +27,29 @@ public class FPSCameraController : MonoBehaviour
 
     private void RotateCamera()
     {
-        //get axis to move
-        Vector2 inputValues = new Vector2(Input.GetAxisRaw("Mouse X"), Input.GetAxisRaw("Mouse Y"));
+        if (!GameManager.instance.isPaused)
+        {
+            //get axis to move
+            Vector2 inputValues = new Vector2(Input.GetAxisRaw("Mouse X"), Input.GetAxisRaw("Mouse Y"));
 
-        //combine input values with look sensitivity and smoothing
-        inputValues = Vector2.Scale(inputValues, new Vector2(lookSensitivity * smoothing, lookSensitivity * smoothing));
+            //combine input values with look sensitivity and smoothing
+            inputValues = Vector2.Scale(inputValues, new Vector2(lookSensitivity * smoothing, lookSensitivity * smoothing));
 
-        //smooth movements via lerp
-        _lerpVelocity.x = Mathf.Lerp(_lerpVelocity.x, inputValues.x, 1f / smoothing);
-        _lerpVelocity.y = Mathf.Lerp(_lerpVelocity.y, inputValues.y, 1f / smoothing);
+            //smooth movements via lerp
+            _lerpVelocity.x = Mathf.Lerp(_lerpVelocity.x, inputValues.x, 1f / smoothing);
+            _lerpVelocity.y = Mathf.Lerp(_lerpVelocity.y, inputValues.y, 1f / smoothing);
 
-        _currentViewPos += _lerpVelocity;
+            _currentViewPos += _lerpVelocity;
 
-        //clamp y so it doesnt spin off into space
-        _currentViewPos.y = Mathf.Clamp(_currentViewPos.y, -90f, 90f);
+            //clamp y so it doesnt spin off into space
+            _currentViewPos.y = Mathf.Clamp(_currentViewPos.y, -90f, 90f);
 
-        //up down
-        transform.localRotation = Quaternion.AngleAxis(-_currentViewPos.y, Vector3.right);
+            //up down
+            transform.localRotation = Quaternion.AngleAxis(-_currentViewPos.y, Vector3.right);
 
-        //l & r
-        _player.transform.localRotation = Quaternion.AngleAxis(_currentViewPos.x, _player.transform.up);
-
+            //l & r
+            _player.transform.localRotation = Quaternion.AngleAxis(_currentViewPos.x, _player.transform.up);
+        }
     }
 
 }
