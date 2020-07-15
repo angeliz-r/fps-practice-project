@@ -18,9 +18,9 @@ public class TooltipUI : MonoBehaviour
     {
         _tooltipText.gameObject.SetActive(false);
     }
-    public void OnStartLook()
+    public void OnStartLook(string itemName)
     {
-        _tooltipText.text = "PRESS " + MovementInput.instance.interact + " TO PICK UP";
+        _tooltipText.text = "PRESS " + MovementInput.instance.interact + " TO PICK UP " + itemName.ToUpper();
         _tooltipText.gameObject.SetActive(true);
     }
 

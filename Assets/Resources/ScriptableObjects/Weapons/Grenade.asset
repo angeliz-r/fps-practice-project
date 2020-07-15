@@ -14,9 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gunName: Grenade
   gunPrefab: {fileID: 0}
+  gunPickup: {fileID: 0}
   gunIcon: {fileID: 0}
   scope: {fileID: 0}
-  ammoType: 2
+  ammoType: 0
   minDamage: 100
   maxDamage: 200
   maxRange: 90

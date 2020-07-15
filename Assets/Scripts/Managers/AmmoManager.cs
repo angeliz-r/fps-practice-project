@@ -7,10 +7,10 @@ using System;
 public class AmmoManager : MonoBehaviour
 {
     public static AmmoManager instance;
-    public int ammoCount;
     public TextMeshProUGUI ammoText;
     public bool isInfinite;
 
+    
     //dictionary: a collection of keys & values
     //this example: a collection of ammoTypes & int (num of ammo left per ammo type)
     //cannot be debugged on inspector
@@ -41,7 +41,7 @@ public class AmmoManager : MonoBehaviour
             if (ammoCounts[ammoType] > 0)
             {
                 ammoCounts[ammoType]--;
-                //UpdateAmmoText();
+                UpdateAmmoText();
                 return true;
             }
             else
@@ -54,9 +54,8 @@ public class AmmoManager : MonoBehaviour
 
     public void AddAmmo(int ammoAmt, AmmoTypes ammoType)
     {
-        //ammoCount += ammoAmt;
-        //UpdateAmmoText();
         ammoCounts[ammoType] += ammoAmt;
+        UpdateAmmoText();
     }
 
     private void UpdateAmmoText()
@@ -64,7 +63,14 @@ public class AmmoManager : MonoBehaviour
         if (isInfinite)
             ammoText.text = "99";
         else
-            ammoText.text = ammoCount.ToString();
+        {
+            AmmoTypes type = WeaponHandler.instance.currentGun.ammoType;
+            if (ammoCounts[type] == 0)
+                ammoText.text = "000";
+            else
+                ammoText.text = ammoCounts[type].ToString();
+        }
     }
+
 
 }

@@ -8,7 +8,7 @@ public class GunPickup : MonoBehaviour, ILootable
 
     public void OnStartLook()
     {
-        TooltipUI.instance.OnStartLook();
+        TooltipUI.instance.OnStartLook(gun.gunName);
     }
 
     public void OnInteract()

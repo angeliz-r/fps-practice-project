@@ -25,8 +25,8 @@ public class Gun : ScriptableObject
     public virtual void OnMouseHold(Transform cameraPos) { }
     //scope
     public virtual void OnRightMouseDown() { }
-    
-    protected void Fire(Transform cameraPos) 
+
+    protected void Fire(Transform cameraPos)
     {
         if (AmmoManager.instance.UseAmmo(ammoType))
         {
@@ -46,6 +46,10 @@ public class Gun : ScriptableObject
                 }
 
             }
+        }
+        else //if there is no ammo
+        {
+            AmmoStatus.instance.StatusPopUp();
         }
     }
 }

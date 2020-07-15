@@ -46,6 +46,7 @@ public class EnemyHealth : MonoBehaviour, IDamageable
     {
         if (_currentHealth <= 0)
         {
+            ScoreManager.instance.AddScore(1);
             foreach (Material temp in mat)
                 temp.shader = dissolveShader;
 

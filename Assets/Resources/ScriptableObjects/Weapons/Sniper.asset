@@ -13,8 +13,11 @@ MonoBehaviour:
   m_Name: Sniper
   m_EditorClassIdentifier: 
   gunName: Sniper
-  gunPrefab: {fileID: 0}
-  gunIcon: {fileID: 0}
+  gunPrefab: {fileID: 6490928144822720894, guid: 10c1f90c72af80740aa68fa3684e7a14,
+    type: 3}
+  gunPickup: {fileID: 8672171095944824631, guid: 3be29ac013836f646aea4da8bd2c0d11,
+    type: 3}
+  gunIcon: {fileID: 21300020, guid: 6674e8c43c63e4f4184cbd009379498d, type: 3}
   scope: {fileID: 0}
   ammoType: 1
   minDamage: 100

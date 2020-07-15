@@ -9,7 +9,8 @@ public class AmmoPickup : MonoBehaviour, ILootable
 
     public void OnStartLook()
     {
-        TooltipUI.instance.OnStartLook();
+        string ammoName = ammoType.ToString() + " AMMO";
+        TooltipUI.instance.OnStartLook(ammoName);
     }
 
     public void OnInteract()

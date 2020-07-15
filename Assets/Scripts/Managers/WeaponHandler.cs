@@ -14,6 +14,7 @@ public class WeaponHandler : MonoBehaviour
     private Transform _camTransform;
     private GameObject _currentGunPrefab;
     private int _gunListNum;
+
     void Awake()
     {
         _camTransform = Camera.main.transform;
@@ -29,7 +30,7 @@ public class WeaponHandler : MonoBehaviour
    
     void Update()
     {
-        //WeaponSelect();
+        WeaponSelect();
     }
 
     void WeaponSelect()
@@ -55,13 +56,31 @@ public class WeaponHandler : MonoBehaviour
 
     public void PickUpGun(Gun gun)
     {
-        if (currentGun != null)
+        // gunlist 0 - light, gunlist 2 - med/heavy
+
+        if (gun.ammoType == AmmoTypes.Light)
         {
-            Instantiate(currentGun.gunPickup, transform.position + transform.forward, Quaternion.identity);
-            Destroy(_currentGunPrefab);
+            if (gunList[0] != null)
+            {
+                Instantiate(gunList[0].gunPickup, transform.position + transform.forward, Quaternion.identity);
+                Destroy(_currentGunPrefab);
+            }
+            gunList[0] = gun;
+            currentGun = gunList[0];
+            _currentGunPrefab = Instantiate(gun.gunPrefab, transform);
+            currentIcon.sprite = gun.gunIcon;
         }
-        currentGun = gun;
-        _currentGunPrefab = Instantiate(gun.gunPrefab,transform);
-        currentIcon.sprite = gun.gunIcon;
+        else if (gun.ammoType == AmmoTypes.Medium || gun.ammoType == AmmoTypes.Heavy)
+        {
+            if (gunList[1] != null)
+            {
+                Instantiate(gunList[1].gunPickup, transform.position + transform.forward, Quaternion.identity);
+                Destroy(_currentGunPrefab);
+            }
+            gunList[1] = gun;
+            currentGun = gunList[1];
+            _currentGunPrefab = Instantiate(gun.gunPrefab, transform);
+            currentIcon.sprite = gun.gunIcon;
+        }
     }
 }
