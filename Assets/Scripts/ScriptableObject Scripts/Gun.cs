@@ -14,6 +14,7 @@ public class Gun : ScriptableObject
     [Space]
     [Header("Gun Stats")]
     public AmmoTypes ammoType;
+    public AudioTypes audioType;
     public int minDamage;
     public int maxDamage;
     public float maxRange;
@@ -30,10 +31,12 @@ public class Gun : ScriptableObject
     {
         if (AmmoManager.instance.UseAmmo(ammoType))
         {
+            AudioManager.instance.PlayAudio(audioType, AudioSourceType.PLAYER_SRC);
             RaycastHit hit;
             if (Physics.Raycast(cameraPos.position, cameraPos.transform.forward, out hit, Mathf.Infinity))
             {
                 IDamageable damageable = hit.collider.GetComponent<IDamageable>();
+
                 if (damageable != null)
                 {
                     float normalizedDistance = hit.distance / maxRange;
@@ -44,6 +47,7 @@ public class Gun : ScriptableObject
                     }
 
                 }
+
 
             }
         }

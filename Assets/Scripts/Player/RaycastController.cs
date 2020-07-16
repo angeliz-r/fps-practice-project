@@ -38,6 +38,7 @@ public class RaycastController : MonoBehaviour
         {
             ILootable lootable = hit.collider.GetComponent<ILootable>();
 
+            //START FOR LOOTABLE
             if (lootable != null)
             {
                 if (lootable == _currentTarget)
@@ -64,6 +65,8 @@ public class RaycastController : MonoBehaviour
                     _currentTarget = null;
                 }
             }
+            //END FOR LOOTABLE
+
         }
         else
         {

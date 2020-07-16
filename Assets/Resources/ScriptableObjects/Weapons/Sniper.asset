@@ -20,6 +20,7 @@ MonoBehaviour:
   gunIcon: {fileID: 21300020, guid: 6674e8c43c63e4f4184cbd009379498d, type: 3}
   scope: {fileID: 0}
   ammoType: 1
+  audioType: 2
   minDamage: 100
   maxDamage: 30
   maxRange: 150

@@ -5,9 +5,9 @@ using TMPro;
 public class ScoreManager : MonoBehaviour
 {
     public static ScoreManager instance;
-    protected int score;
+    protected int _score;
+    protected bool _isStarted;
     [SerializeField] private TextMeshPro _scoreText;
-
     void Awake ()
     {
         instance = this;
@@ -15,13 +15,21 @@ public class ScoreManager : MonoBehaviour
 
     public void AddScore (int add)
     {
-        score += add;
-        _scoreText.text = score.ToString();
+        if (_isStarted)
+        {
+            _score += add;
+            _scoreText.text = _score.ToString();
+        }
     }
 
     public void ResetScore()
     {
-        score = 0;
-        _scoreText.text = score.ToString();
+        _score = 0;
+        _scoreText.text = _score.ToString();
+    }
+
+    public void ToggleIsStarted(bool x)
+    {
+        _isStarted = x;
     }
 }

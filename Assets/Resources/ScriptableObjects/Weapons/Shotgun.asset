@@ -13,10 +13,14 @@ MonoBehaviour:
   m_Name: Shotgun
   m_EditorClassIdentifier: 
   gunName: Shotgun
-  gunPrefab: {fileID: 0}
-  gunIcon: {fileID: 0}
+  gunPrefab: {fileID: 6799747845015728906, guid: 43cc30cfe1fc6d24c8bda8840c918618,
+    type: 3}
+  gunPickup: {fileID: 5202339027467442635, guid: 1e774dc8a5a8f6442a770f0b0c105c9b,
+    type: 3}
+  gunIcon: {fileID: 21300026, guid: 6674e8c43c63e4f4184cbd009379498d, type: 3}
   scope: {fileID: 0}
   ammoType: 2
+  audioType: 3
   minDamage: 80
   maxDamage: 20
   maxRange: 15

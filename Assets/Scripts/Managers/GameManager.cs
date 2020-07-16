@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
@@ -33,7 +33,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    void Pause()
+    public void Pause()
     {
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
@@ -41,11 +41,16 @@ public class GameManager : MonoBehaviour
         pauseMenu.SetActive(true);
     }
 
-    void Resume()
+    public void Resume()
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         isPaused = false;
         pauseMenu.SetActive(false);
+    }
+
+    public void ReloadScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().ToString());
     }
 }

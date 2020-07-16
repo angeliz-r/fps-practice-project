@@ -13,10 +13,14 @@ MonoBehaviour:
   m_Name: Rocket
   m_EditorClassIdentifier: 
   gunName: Rocket
-  gunPrefab: {fileID: 0}
-  gunIcon: {fileID: 0}
+  gunPrefab: {fileID: 6737984882392300710, guid: 2ed94fd46415aaa468d7c84f742d54ab,
+    type: 3}
+  gunPickup: {fileID: 2286087994694463041, guid: 8cfe63ae6366d054d80d0092e3a1bb34,
+    type: 3}
+  gunIcon: {fileID: 21300024, guid: 6674e8c43c63e4f4184cbd009379498d, type: 3}
   scope: {fileID: 0}
   ammoType: 2
+  audioType: 5
   minDamage: 300
   maxDamage: 100
   maxRange: 120
