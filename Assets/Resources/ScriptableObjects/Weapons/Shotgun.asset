@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Shotgun
   m_EditorClassIdentifier: 
   gunName: Shotgun
-  gunPrefab: {fileID: 6799747845015728906, guid: 43cc30cfe1fc6d24c8bda8840c918618,
+  gunPrefab: {fileID: 1855453091030086167, guid: 43cc30cfe1fc6d24c8bda8840c918618,
     type: 3}
   gunPickup: {fileID: 5202339027467442635, guid: 1e774dc8a5a8f6442a770f0b0c105c9b,
     type: 3}
@@ -25,3 +25,5 @@ MonoBehaviour:
   maxDamage: 20
   maxRange: 15
   hasScope: 0
+  turnOffGun: 0
+  scopeZoom: 0

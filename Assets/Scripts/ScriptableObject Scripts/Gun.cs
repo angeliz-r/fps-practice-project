@@ -10,7 +10,7 @@ public class Gun : ScriptableObject
     public GameObject gunPrefab;
     public GameObject gunPickup;
     public Sprite gunIcon;
-    public GameObject scope;
+    public Sprite scope;
     [Space]
     [Header("Gun Stats")]
     public AmmoTypes ammoType;
@@ -18,7 +18,11 @@ public class Gun : ScriptableObject
     public int minDamage;
     public int maxDamage;
     public float maxRange;
+    [Space]
+    [Header("Scope")]
     public bool hasScope;
+    public bool turnOffGun;
+    public float scopeZoom;
 
     //semi
     public virtual void OnMouseDown(Transform cameraPos) { }
@@ -26,6 +30,25 @@ public class Gun : ScriptableObject
     public virtual void OnMouseHold(Transform cameraPos) { }
     //scope
     public virtual void OnRightMouseDown() { }
+
+    protected void Scope ()
+    {
+        if (hasScope)
+        {
+            Animator anim = WeaponHandler.instance._currentGunPrefab.GetComponent<Animator>();
+            GameObject gun = WeaponHandler.instance._currentGunPrefab;
+            if (anim.GetBool("isScoped"))
+            {
+                anim.SetBool("isScoped", false);
+            }
+            else
+            {
+                anim.SetBool("isScoped", true);
+            }
+            ScopeHandler.instance.ToggleScope(anim.GetBool("isScoped"), scope, gun, scopeZoom, turnOffGun);
+        }
+
+    }
 
     protected void Fire(Transform cameraPos)
     {

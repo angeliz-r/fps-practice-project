@@ -5,6 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Automatic Gun", menuName="Guns/Automatic")]
 public class Automatic : Gun
 {
+    [Header("Fire Rate")]
     public float fireRate;
     private float _lastTimeFired;
 
@@ -17,5 +18,10 @@ public class Automatic : Gun
            // Debug.Log("fire auto");
             Fire(cameraPos);
         }
+    }
+
+    public override void OnRightMouseDown()
+    {
+        Scope();
     }
 }

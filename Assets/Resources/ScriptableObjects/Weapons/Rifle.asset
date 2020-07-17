@@ -13,16 +13,17 @@ MonoBehaviour:
   m_Name: Rifle
   m_EditorClassIdentifier: 
   gunName: Rifle
-  gunPrefab: {fileID: 5872453088391411588, guid: 9062ccc598fd71e49b2a99f4d9047666,
+  gunPrefab: {fileID: 7725182677217991572, guid: 9062ccc598fd71e49b2a99f4d9047666,
     type: 3}
   gunPickup: {fileID: 562015009414309467, guid: 880f6e6583918754f9fd8e9b8edbd578,
     type: 3}
   gunIcon: {fileID: 21300042, guid: 6674e8c43c63e4f4184cbd009379498d, type: 3}
-  scope: {fileID: 0}
+  scope: {fileID: 21300000, guid: 3a445d4995bebf04ba8372537f3655ed, type: 3}
   ammoType: 1
   audioType: 1
   minDamage: 20
   maxDamage: 50
   maxRange: 100
   hasScope: 1
+  scopeZoom: 1.2
   fireRate: 5

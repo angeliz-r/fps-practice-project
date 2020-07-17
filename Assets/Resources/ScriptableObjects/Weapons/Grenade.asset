@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Grenade
   m_EditorClassIdentifier: 
   gunName: Grenade
-  gunPrefab: {fileID: 6682946594042021667, guid: 95345a6f8124bbf488eaa5ecf63d1ea1,
+  gunPrefab: {fileID: 6356415741310470140, guid: 95345a6f8124bbf488eaa5ecf63d1ea1,
     type: 3}
   gunPickup: {fileID: 8139370898253068206, guid: 04f4193b83c08054d864d31dd947ab90,
     type: 3}
@@ -25,3 +25,5 @@ MonoBehaviour:
   maxDamage: 200
   maxRange: 90
   hasScope: 0
+  turnOffGun: 0
+  scopeZoom: 0

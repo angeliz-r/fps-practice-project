@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Rocket
   m_EditorClassIdentifier: 
   gunName: Rocket
-  gunPrefab: {fileID: 6737984882392300710, guid: 2ed94fd46415aaa468d7c84f742d54ab,
+  gunPrefab: {fileID: 4568468264841747036, guid: 2ed94fd46415aaa468d7c84f742d54ab,
     type: 3}
   gunPickup: {fileID: 2286087994694463041, guid: 8cfe63ae6366d054d80d0092e3a1bb34,
     type: 3}
@@ -25,3 +25,5 @@ MonoBehaviour:
   maxDamage: 100
   maxRange: 120
   hasScope: 0
+  turnOffGun: 0
+  scopeZoom: 0

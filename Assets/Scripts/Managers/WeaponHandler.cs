@@ -12,7 +12,7 @@ public class WeaponHandler : MonoBehaviour
     public List<Gun> gunList = new List<Gun>();
 
     private Transform _camTransform;
-    private GameObject _currentGunPrefab;
+    [HideInInspector]public GameObject _currentGunPrefab;
     private int _gunListNum;
 
     void Awake()
