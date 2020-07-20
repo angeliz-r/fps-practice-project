@@ -29,6 +29,10 @@ public class RaycastController : MonoBehaviour
                 _currentTarget.OnInteract();
             }
         }
+        if (Input.GetKeyDown(_input.drop))
+        {
+            WeaponHandler.instance.DropGun();
+        }
     }
     void HandleRaycast()
     {

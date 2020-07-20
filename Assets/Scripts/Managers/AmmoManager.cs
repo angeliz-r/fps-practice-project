@@ -22,6 +22,11 @@ public class AmmoManager : MonoBehaviour
         //UpdateAmmoText();
     }
 
+    void Update()
+    {
+        UpdateAmmoText();
+    }
+
     void Start()
     {
         for (int i = 0; i < Enum.GetNames(typeof(AmmoTypes)).Length; i++)

@@ -22,12 +22,10 @@ public class GameManager : MonoBehaviour
         {
             if (isPaused)
             {
-                Time.timeScale = 1f;
                 Resume();
             }
             else
             {
-                Time.timeScale =0f;
                 Pause();
             }
         }
@@ -35,6 +33,7 @@ public class GameManager : MonoBehaviour
 
     public void Pause()
     {
+        Time.timeScale = 0f;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         isPaused = true;
@@ -43,6 +42,7 @@ public class GameManager : MonoBehaviour
 
     public void Resume()
     {
+        Time.timeScale = 1f;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         isPaused = false;

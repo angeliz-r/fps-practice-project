@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GunPickup : MonoBehaviour, ILootable
 {
-    public Gun gun;
+    public Weapon gun;
 
     public void OnStartLook()
     {

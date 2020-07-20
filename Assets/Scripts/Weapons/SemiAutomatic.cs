@@ -1,8 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-[CreateAssetMenu(fileName = "SemiAuto Gun", menuName = "Guns/SemiAutomatic")]
-public class SemiAutomatic : Gun
+﻿using UnityEngine;
+[CreateAssetMenu(fileName = "SemiAuto Gun", menuName = "Weapons/SemiAutomatic")]
+public class SemiAutomatic : Weapon
 {
     public override void OnMouseDown(Transform cameraPos)
     {

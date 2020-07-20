@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Automatic Gun", menuName="Guns/Automatic")]
-public class Automatic : Gun
+[CreateAssetMenu(fileName = "Automatic Gun", menuName= "Weapons/Automatic")]
+public class Automatic : Weapon
 {
-    [Header("Fire Rate")]
+    [Header("Auto Stats")]
     public float fireRate;
     private float _lastTimeFired;
 

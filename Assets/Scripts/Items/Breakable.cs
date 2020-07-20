@@ -8,5 +8,4 @@ public class Breakable : MonoBehaviour, IDamageable
     {
         Destroy(gameObject);
     }
-
 }
