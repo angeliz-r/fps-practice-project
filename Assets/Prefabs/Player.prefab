@@ -422,6 +422,7 @@ GameObject:
   - component: {fileID: 2744669718222638099}
   - component: {fileID: 6904692978057707979}
   - component: {fileID: 1957559040}
+  - component: {fileID: 1957559041}
   m_Layer: 0
   m_Name: PlayerCamera
   m_TagString: MainCamera
@@ -651,6 +652,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scopeImg: {fileID: 1500740580}
+--- !u!95 &1957559041
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2744669718222638102}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 52af377c0c8c7b942b2f59c4e292fb66, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2744669718741534430
 GameObject:
   m_ObjectHideFlags: 0
@@ -705,7 +725,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2744669718741534430}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -782,6 +802,7 @@ MonoBehaviour:
   speed: 4
   runSpeed: 10
   jumpForce: 5
+  _playerCamera: {fileID: 2744669718222638102}
 --- !u!114 &2744669718741534431
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1421,6 +1442,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 29278517}
     m_Modifications:
+    - target: {fileID: 3905834586199645269, guid: 2ed94fd46415aaa468d7c84f742d54ab,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4568468264841747036, guid: 2ed94fd46415aaa468d7c84f742d54ab,
         type: 3}
       propertyPath: m_Name

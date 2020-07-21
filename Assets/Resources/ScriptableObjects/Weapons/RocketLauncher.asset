@@ -9,10 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4471e23bf14654140881d136a2ee4b39, type: 3}
-  m_Name: Rocket
+  m_Script: {fileID: 11500000, guid: 8de446554ba61fa43b97976752b0a9eb, type: 3}
+  m_Name: RocketLauncher
   m_EditorClassIdentifier: 
-  gunName: Rocket
+  gunName: Rocket Launcher
   gunPrefab: {fileID: 4568468264841747036, guid: 2ed94fd46415aaa468d7c84f742d54ab,
     type: 3}
   gunPickup: {fileID: 2286087994694463041, guid: 8cfe63ae6366d054d80d0092e3a1bb34,
@@ -27,3 +27,6 @@ MonoBehaviour:
   hasScope: 0
   turnOffGun: 0
   scopeZoom: 0
+  bullet: {fileID: 11400000, guid: 494f4458dba69974ab028970e45ac84d, type: 2}
+  spawnPos: {fileID: 6955820581925260678, guid: 569f40b3c6b881842a509119fd856cec,
+    type: 3}

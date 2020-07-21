@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c132b6ae44aef7b43bd68d543eef06ae, type: 3}
+  m_Name: RocketBullet
+  m_EditorClassIdentifier: 
+  gunName: Rocket Bullet
+  gunPrefab: {fileID: 0}
+  gunPickup: {fileID: 0}
+  gunIcon: {fileID: 0}
+  scope: {fileID: 0}
+  ammoType: 2
+  audioType: 5
+  minDamage: 300
+  maxDamage: 100
+  maxRange: 120
+  hasScope: 0
+  turnOffGun: 0
+  scopeZoom: 0
+  grenadePrefab: {fileID: 8838124244268272434, guid: 15a09621e336f3c469423f641e3e3e48,
+    type: 3}
+  explosionEffect: {fileID: 1000011128802252, guid: 96730f8640590934eacb6f860058e7f9,
+    type: 3}
+  delay: 0
+  blastRadius: 10
+  explosionForce: 250
+  throwForce: 100

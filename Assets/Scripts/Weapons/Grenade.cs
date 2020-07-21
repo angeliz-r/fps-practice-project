@@ -14,8 +14,6 @@ public class Grenade : Weapon
     public float blastRadius;
     public float explosionForce;
     public float throwForce;
-
-    private Vector3 _worldPos;
     public override void OnMouseDown(Transform cameraPos)
     {
         Throw(cameraPos);
@@ -31,24 +29,23 @@ public class Grenade : Weapon
         if (AmmoManager.instance.UseAmmo(ammoType))
         {
             RaycastHit hit;
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            if (Physics.Raycast(ray, out hit, Mathf.Infinity))
+            if (Physics.Raycast(cameraPos.position, cameraPos.transform.forward, out hit, Mathf.Infinity))
             {
-                _worldPos = hit.point;
-                GameObject grenade = Instantiate(grenadePrefab,_worldPos, cameraPos.rotation);
+                GameObject grenade = Instantiate(grenadePrefab, cameraPos.position, cameraPos.rotation);
                 Rigidbody rb = grenade.GetComponent<Rigidbody>();
                 rb.AddForce(cameraPos.forward * throwForce, ForceMode.VelocityChange);
             }
-
             //if there are no more grenades
             if (!AmmoManager.instance.UseAmmo(ammoType))
             {
                 WeaponHandler.instance.EquipWeaponInInventory(1);
                 WeaponHandler.instance.gunList[0] = null;
-
             }
         }
+        else //if there is no ammo
+        {
+            AmmoStatus.instance.StatusPopUp();
+        }
     }
-
-
 }
+
