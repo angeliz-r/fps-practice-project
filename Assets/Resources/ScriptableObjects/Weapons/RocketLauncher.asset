@@ -15,7 +15,7 @@ MonoBehaviour:
   gunName: Rocket Launcher
   gunPrefab: {fileID: 4568468264841747036, guid: 2ed94fd46415aaa468d7c84f742d54ab,
     type: 3}
-  gunPickup: {fileID: 2286087994694463041, guid: 8cfe63ae6366d054d80d0092e3a1bb34,
+  gunPickup: {fileID: 2666083222703786739, guid: 8cfe63ae6366d054d80d0092e3a1bb34,
     type: 3}
   gunIcon: {fileID: 21300024, guid: 6674e8c43c63e4f4184cbd009379498d, type: 3}
   scope: {fileID: 0}

@@ -15,7 +15,7 @@ MonoBehaviour:
   gunName: Pistol
   gunPrefab: {fileID: 6240118320777378252, guid: 970210deb15153e499178c1e2c67a625,
     type: 3}
-  gunPickup: {fileID: 5319180051065628214, guid: 6fe6e137c55fcec478baa32dce5dbcb3,
+  gunPickup: {fileID: 3965663293797994771, guid: 6fe6e137c55fcec478baa32dce5dbcb3,
     type: 3}
   gunIcon: {fileID: 21300028, guid: 6674e8c43c63e4f4184cbd009379498d, type: 3}
   scope: {fileID: 0}

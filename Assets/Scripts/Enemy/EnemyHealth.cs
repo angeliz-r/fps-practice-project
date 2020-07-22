@@ -7,32 +7,20 @@ public class EnemyHealth : MonoBehaviour, IDamageable
 {
     public EnemyStats stats;
 
-    [Header("Enemy Dissolve")]
-    public Shader dissolveShader;
-    [HideInInspector]public Shader defaultShader;
-    public Material[] mat;
-
-    [Space]
     [Header("Damage Text")]
     public GameObject dmgText;
 
     private int _currentHealth;
     private EnemyHealthUI _healthUI;
 
+    private EnemyDeath _materialChanger;
      void Awake()
     {
         _healthUI = GetComponent<EnemyHealthUI>();
         _currentHealth = stats.maxHealth;
-        defaultShader = Shader.Find("HDRP/Lit");
-      
+        _materialChanger = GetComponent<EnemyDeath>();
     }
 
-    void Start()
-    {
-        foreach (Material temp in mat)
-            temp.shader = defaultShader;
-    }
-   
     public void DealDamage(int damage)
     {
         _currentHealth -= damage;
@@ -47,9 +35,7 @@ public class EnemyHealth : MonoBehaviour, IDamageable
         if (_currentHealth <= 0)
         {
             ScoreManager.instance.AddScore(1);
-            foreach (Material temp in mat)
-                temp.shader = dissolveShader;
-
+            _materialChanger.ToggleMaterialChange(true);
             StartCoroutine(Dissolve());
         }     
     }

@@ -15,7 +15,7 @@ MonoBehaviour:
   gunName: Grenade
   gunPrefab: {fileID: 6356415741310470140, guid: 95345a6f8124bbf488eaa5ecf63d1ea1,
     type: 3}
-  gunPickup: {fileID: 8139370898253068206, guid: 04f4193b83c08054d864d31dd947ab90,
+  gunPickup: {fileID: 5810030889962925018, guid: 04f4193b83c08054d864d31dd947ab90,
     type: 3}
   gunIcon: {fileID: 21300022, guid: 5163ae49a0de665458bba61cd20c99b1, type: 3}
   scope: {fileID: 0}
