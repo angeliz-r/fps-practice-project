@@ -29,9 +29,8 @@ MonoBehaviour:
   scopeZoom: 0
   grenadePrefab: {fileID: 7136131499807742752, guid: 67d1f5cfc337e824fb228973a0f67d44,
     type: 3}
-  explosionEffect: {fileID: 1000011797152326, guid: acf39d9f4addf294d93fa56fa373961b,
-    type: 3}
+  explosionEffect: {fileID: 100004, guid: b46890100828db6429ff69c322b45893, type: 3}
   delay: 3
   blastRadius: 6
   explosionForce: 300
-  throwForce: 30
+  throwForce: 20

@@ -40,8 +40,8 @@ public class RaycastController : MonoBehaviour
 
         if (Physics.Raycast(transform.position, transform.forward, out hit, raycastLength))
         {
-            Vector3 forward = transform.TransformDirection(Vector3.forward) * 10;
-            Debug.DrawRay(transform.position, forward, Color.green);
+           //Vector3 forward = transform.TransformDirection(Vector3.forward) * 10;
+           // Debug.DrawRay(transform.position, forward, Color.green);
             ILootable lootable = hit.collider.GetComponent<ILootable>();
 
             //START FOR LOOTABLE

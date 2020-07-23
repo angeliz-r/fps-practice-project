@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class AmmoSpawner : MonoBehaviour
@@ -13,19 +12,9 @@ public class AmmoSpawner : MonoBehaviour
     [Header("Ammo Prefabs")]
     public GameObject[] ammoPrefab;
 
-    void Awake ()
-    {
-
-    }
     void Start()
     {
         StartCoroutine(SpawnCooldown());
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public void CheckIfEmpty ()
