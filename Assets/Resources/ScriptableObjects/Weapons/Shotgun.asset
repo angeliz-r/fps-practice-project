@@ -21,8 +21,8 @@ MonoBehaviour:
   scope: {fileID: 0}
   ammoType: 2
   audioType: 3
-  minDamage: 80
-  maxDamage: 20
+  minDamage: 20
+  maxDamage: 80
   maxRange: 15
   hasScope: 0
   turnOffGun: 0

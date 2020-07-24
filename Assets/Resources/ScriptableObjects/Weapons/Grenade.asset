@@ -22,8 +22,8 @@ MonoBehaviour:
   ammoType: 3
   audioType: 4
   minDamage: 100
-  maxDamage: 200
-  maxRange: 90
+  maxDamage: 230
+  maxRange: 40
   hasScope: 0
   turnOffGun: 0
   scopeZoom: 0

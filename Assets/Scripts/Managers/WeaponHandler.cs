@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class WeaponHandler : MonoBehaviour
 {
     public static WeaponHandler instance;
-
+    public bool canSwitch;
     public Weapon currentGun;
     public Image currentIcon;
     public List<Weapon> gunList = new List<Weapon>();
@@ -25,6 +25,7 @@ public class WeaponHandler : MonoBehaviour
     {
         currentGun = gunList[0];
         _currentGunPrefab = Instantiate(gunList[0].gunPrefab, transform);
+        canSwitch = true;
     }
 
    
@@ -43,16 +44,18 @@ public class WeaponHandler : MonoBehaviour
 
     void WeaponSelect()
     {
-        float scroll = Input.GetAxis("Mouse ScrollWheel");
-
-        if (scroll > 0f && gunList[0] != null && gunList[1] != null)
+        if (canSwitch)
         {
-            EquipWeaponInInventory(0);
-        }
-        else if (scroll < 0f && gunList[1] != null && gunList[0] != null)
-        {
+            float scroll = Input.GetAxis("Mouse ScrollWheel");
 
-            EquipWeaponInInventory(1);
+            if (scroll > 0f && gunList[0] != null && gunList[1] != null)
+            {
+                EquipWeaponInInventory(0);
+            }
+            else if (scroll < 0f && gunList[1] != null && gunList[0] != null)
+            {
+                EquipWeaponInInventory(1);
+            }
         }
     }
 

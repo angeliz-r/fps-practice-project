@@ -40,10 +40,12 @@ public class Weapon : ScriptableObject
             if (anim.GetBool("isScoped"))
             {
                 anim.SetBool("isScoped", false);
+                WeaponHandler.instance.canSwitch = true;
             }
             else
             {
                 anim.SetBool("isScoped", true);
+                WeaponHandler.instance.canSwitch = false;
             }
             ScopeHandler.instance.ToggleScope(anim.GetBool("isScoped"), scope, gun, scopeZoom, turnOffGun);
         }
